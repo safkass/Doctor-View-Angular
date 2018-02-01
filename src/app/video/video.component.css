@@ -4,13 +4,13 @@ body {
 }
 
 h3 {
-	font-family: 'Gadget', sans-serif;
+	font-family: Georgia, serif;
 	font-weight: 300;
-	color: #62029d;
+	color: #0053B3;
 	margin-top: 0px;
 	margin-bottom: 5px;
 	text-transform: uppercase;
-	font-size: 26px;
+	font-size: 30px;
 }
 
 div.container {
@@ -61,7 +61,7 @@ div.inner.loginBox {
 	height: 130px;
 }
 
-div.takeaways {
+/* div.takeaways {
 	margin-top: 60px;
 }
 
@@ -73,7 +73,7 @@ div.takeaways ul li {
 	font-size: 12px;
 	margin-top: 12px;
 	font-family: 'Roboto', sans-serif;
-}
+} */
 
 div.mainArea {
 	height: 300px;
@@ -258,7 +258,7 @@ input {
 
 button {
 	color: #fff;
-	background-color: #63029C;
+	background-color: #0053B3;
 	font-size: 14px;
 	font-family: 'Comic Sans MS', 'cursive', 'Sans Serif';
 	font-weight: 300;
@@ -278,6 +278,7 @@ div#userInfo {
 }
 
 span#username {
+	margin-bottom: 15px
 }
 
 div.top1 {
@@ -289,7 +290,7 @@ div.top1 {
 }
 
 div.top1 h1 {
-	margin-top: 140px;
+	/* margin-top: 140px; */
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	font-size: 40px;
@@ -316,7 +317,7 @@ div#callLog #stats {
 }
 
 button#call.incall {
-	background-color: #d9bfe9;
+	background-color: #7CB7FB;
 }
 
 button#call.callwaiting {
@@ -324,19 +325,19 @@ button#call.callwaiting {
 }
 
 button#hangup {
-	background-color: #d9bfe9;
+	background-color: #7CB7FB;
 }
 
 button#hangup.incall {
-	background-color: #62029d;
+	background-color: #0053B3;
 }
 
 button#answer {
-	background-color: #d9bfe9;
+	background-color: #7CB7FB;
 }
 
 button#answer.callwaiting {
-	background-color: #62029d;
+	background-color: #0053B3;
 }
 
 form#newCall button {
@@ -347,7 +348,7 @@ video {
 	width: 260px;
 	height: 195px;
 	margin: 10px 12px 10px 12px;
-	border: 1px solid #B0B0B0;
+	border: 1px solid #0053B3;
 	border-radius: 3px;
 	display: none;
 }
