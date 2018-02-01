@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+    <title>Video Calling</title>   
+
+    <!-- Custom styles for this template
+    <link href="floating-labels.css" rel="stylesheet"> -->
+  </head>
+
+  <body>
+      <div class="container" id="content">
+        <img src="../../assets/img/call.png" style="height: 72px; width: 72px">      
+        <h1 class="h3 mb-3 font-weight-normal">Video Call</h1>
+
+        <hr>
+
+        <div class="container">
+            <table class="table table-hover table-dark" border="1">
+                <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">IC Number</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Sex</th>
+                        <th scope="col">Diagnosis History</th>
+                    </tr>
+                </thead>
+        
+                <tbody>
+                    <tr>                
+                        <th scope="row"></th>
+                        <td>{{ patient.name }}</td>
+                        <td>{{ patient.ic }}</td>
+                        <td>{{ patient.age }}</td>
+                        <td>{{ patient.sex }}</td>
+                        <td>
+                            <ul>
+                                <li>{{ patient.diagnosis_history['symtoms'] }}</li>
+                                <li>{{ patient.diagnosis_history['symtoms'] }}</li>
+                                <li>feeling very super hyper dizzy and keep on vomitting</li>
+                                <li>feeling very super dizzy</li>
+                            </ul>                            
+                        </td>
+                    </tr>           
+                </tbody>
+            </table>
+        </div> 
+    
+        <button class="btn btn-lg btn-primary btn-block" [routerLink]="['/video']" style="margin: 0 auto;height: 45px; width: 120px">Start Now</button>
+
+      </div>
+
+    
+  </body>
+</html>
