@@ -43,23 +43,27 @@
                 <input id="callUserName" placeholder="Username (alice)"><br>
                 <button id="call"><i class="fas fa-phone"></i> Call</button>
                 <button id="hangup"><i class="fas fa-power-off"></i> Hangup</button>
-                <button id="answer"><i class="fas fa-phone-volume"></i> Answer</button>
+                <!-- <button id="answer"><i class="fas fa-phone-volume"></i> Answer</button> -->
                 
                 <audio id="ringback" src='assets/ringback.wav' loop></audio>
                 <audio id="ringtone" src='assets/phone_ring.wav' loop></audio>
               </form>
             </div>
-            <div class="clearfix"><br></div>
-        
-            <video id="outgoing" autoplay muted></video>
-            <video id="incoming" autoplay></video>
-        
-            <div id="callLog">
-            </div>
-            <div class="error">
-            </div>
+            <div class="clearfix"><br></div>        
+            
           </div>
+          
         </div>
+
+        <div class="container">
+
+          <video id="outgoing" autoplay muted></video>
+          <video id="incoming" autoplay></video>
+
+          <div id="callLog"></div>
+          <div class="error"></div>
+
+        </div>     
 
   </body>
 </html>

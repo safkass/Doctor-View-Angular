@@ -1,0 +1,51 @@
+<style>
+
+table, tbody, tr, th {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+}
+
+</style>
+
+<div id="app">
+    <nav class="navbar navbar-light navbar-static-top" style="background-color: black;"> 
+        <div class="container">  
+        <span style="font-size:30px;cursor:pointer;color:white">Gion Hospital</span>
+
+        <!-- Right Side Of Navbar-->
+        <ul class="nav navbar-nav navbar-right">
+
+            <li class="nav-item active">
+            <a (click)="logout()" [routerLink]="['/']"><i class="fas fa-sign-out-alt" aria-hidden="true"></i> Logout</a>
+            </li>                
+        </ul>  
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+    <table class="table table-hover table-dark" border="1">
+        <thead>
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Description</th>
+                <th scope="col">Patient Name</th>
+                <th scope="col">Doctor Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let appointment of appointments; let i = index">                
+                <td>{{i+1}}</td>
+                <td><i aria-hidden="true"></i> <a routerLink="/patient/{{appointment.patient_id}}">  {{ appointment.description }}</a></td>
+                <td>{{ appointment.patient_name }}</td>
+                <td>{{ appointment.doctor_name }}</td>
+                <td>{{ appointment.date }}</td>
+                <td>{{ appointment.time }}</td>
+            </tr>           
+        </tbody>
+    </table>
+</div>

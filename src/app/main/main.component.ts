@@ -20,9 +20,9 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
 
-      // this.patient = this.patientService.getPatient("147b6d19-c13f-8603-82fc-76ba0ad3c492");
-      // console.log("patient diagnosis22 history: " + this.patient.diagnosis_history['symtoms']);
-      this.patientColdRef = this.afs.collection('patients');
+    // this.patient = this.patientService.getPatient("147b6d19-c13f-8603-82fc-76ba0ad3c492");
+    // console.log("patient diagnosis22 history: " + this.patient.diagnosis_history['symtoms']);
+    this.patientColdRef = this.afs.collection('patients');
     this.patientColdRef.ref.where('id', '==', "147b6d19-c13f-8603-82fc-76ba0ad3c492").get().then(snapshot => {
       snapshot.forEach(doc => {
         console.log('doc.id: ' + doc.id, '=>', doc.data());

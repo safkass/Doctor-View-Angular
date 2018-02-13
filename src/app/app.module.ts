@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { VideoComponent } from './video/video.component';
@@ -20,6 +21,10 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { PatientService } from './patient.service';
 import { MainComponent } from './main/main.component';
+import { AuthComponent } from './auth/auth.component';
+import { ListComponent } from './list/list.component';
+import { DoctorService } from './doctor.service';
+import { PatientComponent } from './patient/patient.component';
 
 const facebookCustomConfig: AuthProviderWithCustomConfig = {
   provider: AuthProvider.Facebook,
@@ -55,17 +60,21 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
   declarations: [
     AppComponent,
     VideoComponent,
-    MainComponent
+    MainComponent,
+    AuthComponent,
+    ListComponent,
+    PatientComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
   ],
-  providers: [PatientService],
+  providers: [PatientService, DoctorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
