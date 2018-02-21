@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { VideoComponent }  from './video/video.component';
-import { MainComponent } from './main/main.component';
 import { ListComponent } from './list/list.component';
 import { AuthComponent } from './auth/auth.component';
 import { PatientComponent } from './patient/patient.component';

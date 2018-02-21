@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Patient } from '../patient';
 import { Location } from '@angular/common';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
-import { PatientService} from '../patient.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -14,11 +13,7 @@ export class PatientComponent implements OnInit {
 
   id: string;
   patientColdRef: AngularFirestoreCollection<Patient>;
-  patientDoc: AngularFirestoreDocument<Patient>;
   patient: Patient;
-  patientDiagnosis = {
-    symptoms : ''
-  };
 
   constructor(private route: ActivatedRoute, private afs: AngularFirestore, private location: Location) { }
 
@@ -28,8 +23,7 @@ export class PatientComponent implements OnInit {
       this.id = params.id;
     })
 
-     // this.patient = this.patientService.getPatient("147b6d19-c13f-8603-82fc-76ba0ad3c492");
-    // console.log("patient diagnosis22 history: " + this.patient.diagnosis_history['symtoms']);
+    // Display all details of the particular patient
     this.patientColdRef = this.afs.collection('patients');
     this.patientColdRef.ref.where('id', '==', this.id).get().then(snapshot => {
       snapshot.forEach(doc => {
@@ -44,12 +38,6 @@ export class PatientComponent implements OnInit {
           hospital_id : doc.get('hospital_id'),
           diagnosis_history : doc.get('diagnosis_history')
         };
-
-        
-        // console.log("patient diagnosis history: " + this.patient.diagnosis_history['diagnose_condition']['acuteness']);
-        // this.category = this.patient.diagnosis_history['diagnose_condition']['categories'];
-        // console.log("patient categories: " + this.category[0]);
-
 
         this.patient.diagnosis_history = {
           acuteness : this.patient.diagnosis_history['diagnose_condition']['acuteness'],

@@ -19,8 +19,6 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppRoutingModule } from './app-routing.module';
-import { PatientService } from './patient.service';
-import { MainComponent } from './main/main.component';
 import { AuthComponent } from './auth/auth.component';
 import { ListComponent } from './list/list.component';
 import { DoctorService } from './doctor.service';
@@ -60,7 +58,6 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
   declarations: [
     AppComponent,
     VideoComponent,
-    MainComponent,
     AuthComponent,
     ListComponent,
     PatientComponent
@@ -74,7 +71,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     AngularFireAuthModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
   ],
-  providers: [PatientService, DoctorService],
+  providers: [DoctorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

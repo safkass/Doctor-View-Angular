@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Doctor } from '../doctor';
-import { DoctorService } from '../doctor.service';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-auth',
@@ -10,17 +8,9 @@ import { Location } from '@angular/common';
 })
 export class AuthComponent implements OnInit {
 
-  ic : string = null;
-  password : string = null;
-
-  constructor(private doctorService: DoctorService, private location: Location) { }
+  constructor() { }
 
   ngOnInit() {
   }
-
-  // onSubmit() {
-  //   this.doctorService.onSubmit(this.ic);
-
-  // }
 
 }

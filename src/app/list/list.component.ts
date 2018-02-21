@@ -15,7 +15,6 @@ export class ListComponent implements OnInit {
   appColRef: AngularFirestoreCollection<Appointment>;
   appointments: Appointment[] = [];
   ic: string;
-  // ic = this.route.snapshot.params.get('ic');
 
   constructor(private doctorService: DoctorService, private afs: AngularFirestore, private route: ActivatedRoute) { 
   }
@@ -26,6 +25,7 @@ export class ListComponent implements OnInit {
       this.ic = params.ic;
     })
     
+    // Display all appointments of the particular doctor
     this.appColRef = this.afs.collection('appointments');
     this.appColRef.ref.where('doctor_ic', '==', this.ic).get().then(snapshot => {
       snapshot.forEach(doc => {
@@ -47,7 +47,6 @@ export class ListComponent implements OnInit {
     }).catch(error => {
       console.log(error);
     })
-
    
     this.doctorService.onSubmit(this.ic);
   }

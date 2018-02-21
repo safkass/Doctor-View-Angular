@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
-import { PatientService} from '../patient.service';
 import { Patient } from '../patient';
 import 'jquery';
 
@@ -16,7 +15,7 @@ export class VideoComponent implements OnInit {
   globalUsername: string;
   //patient: Patient;
   
-  constructor(private patientService: PatientService) {}
+  constructor() {}
 
   ngOnInit() {
 	this.globalUsername = '';
