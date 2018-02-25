@@ -43,7 +43,6 @@
                 <input id="callUserName" placeholder="Username (alice)"><br>
                 <button id="call"><i class="fas fa-phone"></i> Call</button>
                 <button id="hangup"><i class="fas fa-power-off"></i> Hangup</button>
-                <!-- <button id="answer"><i class="fas fa-phone-volume"></i> Answer</button> -->
                 
                 <audio id="ringback" src='assets/ringback.wav' loop></audio>
                 <audio id="ringtone" src='assets/phone_ring.wav' loop></audio>
@@ -53,6 +52,19 @@
             
           </div>
           
+        </div>
+
+        <div class="container" id="price-form">
+          <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label>Diagnosis Fee</label>
+              <input type="text" id="price" placeholder="Eg: 100" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Submit"/>
+            </div>
+          </form>
         </div>
 
         <div class="container">

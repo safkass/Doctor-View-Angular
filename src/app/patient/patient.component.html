@@ -114,40 +114,5 @@
 
 <div class="container" style="text-align: center;">
   <a class="btn btn-primary" style="margin-right: 10px; width:90px;" (click)="goBack()">Back</a>
-  <a class="btn btn-primary" style="margin-left: 10px;  width:90px;" routerLink="/video">Video Call</a>
+  <a class="btn btn-primary" style="margin-left: 10px;  width:90px;" routerLink="/video/{{appointment.id}}">Video Call</a>
 </div>
-
-<!-- <div class="patient-detail">
-  <div *ngIf="patient" class="card">
-    <div class="card-block">
-      <h4 class="card-title">Name : {{patient.name}}</h4>
-      <h5 class="card-title">Age : {{patient.age}}</h5>
-      <p class="card-text">Sex : {{patient.sex}}</p>
-      <h3 class="card-title">Diagnosis History</h3>
-      <h4 class="card-title">Diagnose Condition</h4>
-      <p class="card-text">Acuteness : {{patient.diagnosis_history.acuteness}}</p>
-      <h5 class="card-title">Categories:</h5>
-      <div *ngFor="let category of patient.diagnosis_history.categories">
-        <ul>
-            <li class="card-text">{{category}}</li>
-        </ul>
-      </div>
-      <p class="card-text">Common Name : {{patient.diagnosis_history.common_name}}</p>
-      <p class="card-text">Hint : {{patient.diagnosis_history.hint}}</p>
-      <p class="card-text">Prevalence : {{patient.diagnosis_history.prevalence}}</p>
-      <p class="card-text">Severity : {{patient.diagnosis_history.severity}}</p>
-      <p class="card-text">Triage Level : {{patient.diagnosis_history.triage_level}}</p>
-      <p class="card-text">Initial Symptom : {{patient.diagnosis_history.initial_symptoms}}</p>
-      <h4 class="card-title">Possible Condition: </h4>
-      <p class="card-text">Name : {{patient.diagnosis_history.possible_condition}}</p>
-      <p class="card-text">Probability : {{patient.diagnosis_history.condition_probability}}</p>
-      <h4 class="card-title">Questions: </h4>
-      <div *ngFor="let ques of patient.diagnosis_history.questions">
-        <ul>
-            <li class="card-text">({{ques.question}}) ({{ques.symptom}}) ({{ques.user_response}}) </li>
-        </ul>
-      </div>    
-  </div>
-  <a class="btn btn-primary" (click)="goBack()">Back</a>
-  <a class="btn btn-primary" routerLink="/video">Video Call</a>
-</div> -->

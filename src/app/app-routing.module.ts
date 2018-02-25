@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: AuthComponent },
   { path: 'list/:ic', component: ListComponent },
   { path: 'patient/:id', component: PatientComponent },
-  { path: 'video', component: VideoComponent }
+  { path: 'video/:id', component: VideoComponent }
 ];
 
 @NgModule({

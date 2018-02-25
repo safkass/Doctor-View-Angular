@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Patient } from '../patient';
+import { Appointment } from '../appointment';
 import { Location } from '@angular/common';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { PatientService} from '../patient.service';
@@ -14,7 +15,8 @@ export class PatientComponent implements OnInit {
 
   id: string;
   patientColdRef: AngularFirestoreCollection<Patient>;
-  patientDoc: AngularFirestoreDocument<Patient>;
+  appColRef: AngularFirestoreCollection<Appointment>;
+  appointment: Appointment;
   patient: Patient;
   patientDiagnosis = {
     symptoms : ''
@@ -68,8 +70,27 @@ export class PatientComponent implements OnInit {
       });
     }).catch(error => {
       console.log(error);
-    })        
-
+    }) 
+    
+    this.appColRef = this.afs.collection('appointments');
+    this.appColRef.ref.where('patient_id', '==', this.id).get().then(snapshot => {
+      snapshot.forEach(doc => {
+        this.appointment = {
+          id : doc.get('id'),
+          description : doc.get('description'),
+          patient_id : doc.get('patient_id'),
+          patient_name : doc.get('patient_name'),
+          doctor_id : doc.get('doctor_id'),
+          doctor_ic: doc.get('doctor_ic'),
+          doctor_name : doc.get('doctor_name'),
+          hospital_id : doc.get('hospital_id'),
+          hospital_name: doc.get('hospital_name'),
+          date : doc.get('date'),
+          time : doc.get('time'),
+          diagnosis_price : doc.get('diagnosis_price'),
+        }
+      })
+    })
   }
 
   goBack() {
