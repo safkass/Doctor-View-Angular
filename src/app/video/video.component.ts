@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { ActivatedRoute } from '@angular/router';
-import { PatientService} from '../patient.service';
 import { Appointment } from '../appointment';
 import 'jquery';
 
