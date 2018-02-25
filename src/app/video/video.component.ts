@@ -231,7 +231,7 @@ export class VideoComponent implements OnInit {
 		$('button').addClass('callwaiting');
 
 		//call.answer(); //Use to test auto answer
-		call.hangup();
+		//call.hangup();
 	}
 	});
 
