@@ -338,6 +338,7 @@ export class VideoComponent implements OnInit {
 	this.appDoc.update(this.appointment).then(() => {
 		console.log('price1: ' + this.appointment.diagnosis_price)
 		console.log('updated appointment price successfully');
+		$('div#price-form').css('display', 'none');
 	}).catch((error => {
 		this.appDoc.set(this.appointment);
 		console.log('error!! - ' + error);
